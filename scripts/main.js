@@ -79,12 +79,16 @@ function comment(e) {
         return false;
     }
 
-    else if (!verifyEmail(email.value))
+    else if (!verifyEmail(email.value)) {
+
         Swal.fire({
             icon: 'error',
             title: 'Invalid Email',
             text: 'Invalid Email, please use a valid email and try again'
         });
+
+        return false;
+    }
 
     $.ajax({
         method: 'post',
