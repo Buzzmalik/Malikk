@@ -1,0 +1,94 @@
+.navbar{
+    background-color: #030f15;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 5;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.links {
+    padding: 1rem;
+    font-size: 1.2rem;
+    /* font-family: 'Nunito', sans-serif; */
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 0.5rem; */
+    /* height: 40px; */
+
+}
+
+nav p {
+    padding: 1rem;
+    color: white;
+    /* font-family: 'Zanzabar', sans-serif; */
+    font-size: 4rem; 
+}
+
+nav .menu-btn {
+    color: white;
+    font-size: 200%;
+    display: none;
+}
+
+.hammenu li {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+    nav .menu-btn {
+        display: flex;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        padding: 0 !important;
+    }
+
+    .navmenu {
+        background: #030f15;
+        color: white;
+        position: fixed;
+        top: -500vh;
+        width: 100%;
+        transition: .3s;
+        z-index: 1;
+    }
+
+    .navmenu.active {
+        top: 50px;
+    }
+
+    nav .hammenu li {
+        display: block;
+        /* padding: 1rem; */
+    }
+
+    nav .hammenu li .links {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+
+    nav .hammenu li:hover {
+        background: #031a25;
+    }
+}
