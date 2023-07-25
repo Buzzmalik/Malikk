@@ -58,3 +58,49 @@ function scrollMe(self, direction="left") {
         scrollbox.scrollBy(400, 0);
     }
 }
+
+
+function comment(e) {
+
+    e.preventDefault();
+
+    let name = document.querySelector('input[name="author"]');
+    let email = document.querySelector('input[name="email"]');
+    let comment = document.querySelector('textarea[name="comment"]');
+
+    if(empty(name) || empty(email) || empty(comment)) {
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Empty Inputs',
+            text: 'Please fill in all fields before sending your comment'
+        });
+
+        return false;
+    }
+
+    $.ajax({
+        method: 'post',
+        url: '/send_email.php',
+        data: {email: email.value, name: name.value, comment: comment.value},
+        success: (data) => {
+            Swal.fire({
+                icon: data.status,
+                text: data.message,
+            });
+        },
+        error: (data) => {
+            Swal.fire({
+                icon: 'error',
+                text: 'Unable to send your comment at the moment, please try again later'
+            });
+        }
+    });
+
+    return true;
+}
+
+function empty(value) {
+    if(value.value.replaceAll(" ", "") == "") return true;
+    return false;
+}

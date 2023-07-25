@@ -182,6 +182,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Research Page -->
     <section id="Research">
         <h2>My Research</h2>
@@ -379,7 +380,7 @@
             <div id="respond" class="comment-respond">
                 <h3 id="reply-title" class="comment-reply-title">Leave a Message <small><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">Cancel reply</a></small></h3>
               
-                <form action="https://mail.google.com/mail/u/0/#inbox" method="post" id="commentform" class="comment-form">
+                <form method="post" id="commentform" class="comment-form" onsubmit="comment(event);">
 
                     <p class="comment-notes">
                         <span id="email-notes">Your email address will not be published.</span> 
@@ -390,8 +391,8 @@
                         <label for="comment">Comment <span class="asterisk_color">*</span></label>
                     </p>
 
-                    <textarea border: 1px solid #003087;  id="comment" name="f69c8bd6fa" cols="45" rows="8" maxlength="65525" required="required"></textarea>
-                    <textarea id="af96c65b22982266eb9fca00c6eec683" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea>
+                    <textarea border: 1px solid #003087;  id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+                    <!-- <textarea id="af96c65b22982266eb9fca00c6eec683" aria-label="hp-comment" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea> -->
                     
                     <p class="comment-form-author">
                         <label for="author">Name <span class="asterisk_color">*</span></label>
@@ -419,7 +420,7 @@
         
         
     
-    </p></form>	</div><!-- #respond -->
+            </p></form>	</div><!-- #respond -->
     
         </section>
 
@@ -485,6 +486,7 @@
                 </div>
             </div>
         </section>
+
     </section>
     
 
@@ -492,7 +494,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/main.js" defer></script>
+
 
     <script data-noptimize="">
         document.getElementById("comment").setAttribute( "id", "af96c65b22982266eb9fca00c6eec683" );
