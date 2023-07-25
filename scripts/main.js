@@ -99,12 +99,16 @@ function comment(e) {
                 icon: data.status,
                 text: data.message,
             });
+
+            console.log(data);
         },
         error: (data) => {
             Swal.fire({
                 icon: 'error',
                 text: 'Unable to send your comment at the moment, please try again later'
             });
+
+            console.log(data);
         }
     });
 
