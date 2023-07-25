@@ -79,6 +79,13 @@ function comment(e) {
         return false;
     }
 
+    else if (!verifyEmail(email.value))
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Invalid Email, please use a valid email and try again'
+        });
+
     $.ajax({
         method: 'post',
         url: '/send_email.php',
@@ -104,3 +111,11 @@ function empty(value) {
     if(value.value.replaceAll(" ", "") == "") return true;
     return false;
 }
+
+function verifyEmail(email) {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+};
