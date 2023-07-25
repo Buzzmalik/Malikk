@@ -73,6 +73,10 @@ nav  a{
     top: 3%;
 }
 
+.navbar {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
 
 
 .article{
